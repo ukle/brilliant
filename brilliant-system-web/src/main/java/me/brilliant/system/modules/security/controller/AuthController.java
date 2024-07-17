@@ -95,8 +95,8 @@ public class AuthController extends BaseController {
 
     @Operation(summary = "获取用户信息")
     @GetMapping(value = "/info")
-    public ResponseEntity<UserDetails> getUserInfo() {
-        return ResponseEntity.ok(SecurityUtils.getCurrentUser());
+    public UserDetails getUserInfo() {
+        return SecurityUtils.getCurrentUser();
     }
 
     @PreventRepeatSubmit
