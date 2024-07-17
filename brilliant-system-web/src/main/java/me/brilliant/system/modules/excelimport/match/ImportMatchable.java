@@ -1,7 +1,7 @@
-package me.brilliant.system.modules.batch.match;
+package me.brilliant.system.modules.excelimport.match;
 
-import me.brilliant.system.modules.batch.ImportProviderContext;
-import me.brilliant.system.modules.batch.dto.ImportMatchResult;
+import me.brilliant.system.modules.excelimport.ImportProviderContext;
+import me.brilliant.system.modules.excelimport.dto.ImportMatchResult;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package me.brilliant.system.modules.batch.dto;
+package me.brilliant.system.modules.excelimport.dto;
 
 import lombok.Data;
 import me.brilliant.boot.web.exception.ResultException;

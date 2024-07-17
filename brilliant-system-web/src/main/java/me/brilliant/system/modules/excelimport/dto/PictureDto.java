@@ -1,4 +1,4 @@
-package me.brilliant.system.modules.batch.dto;
+package me.brilliant.system.modules.excelimport.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;

@@ -1,7 +1,7 @@
-package me.brilliant.system.modules.batch;
+package me.brilliant.system.modules.excelimport;
 
-import me.brilliant.system.modules.batch.dto.ImportMatchResult;
-import me.brilliant.system.modules.batch.match.ImportMatchable;
+import me.brilliant.system.modules.excelimport.dto.ImportMatchResult;
+import me.brilliant.system.modules.excelimport.match.ImportMatchable;
 
 import java.util.ArrayList;
 import java.util.HashMap;

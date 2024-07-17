@@ -1,18 +1,17 @@
-package me.brilliant.system.modules.batch;
+package me.brilliant.system.modules.excelimport;
 
 import cn.hutool.core.date.DateTime;
 import com.alibaba.excel.EasyExcel;
 import me.brilliant.boot.web.exception.ResultException;
 import me.brilliant.system.constant.ErrorCode;
-import me.brilliant.system.modules.batch.constant.ImportType;
-import me.brilliant.system.modules.batch.dto.ImportMatchResult;
-import me.brilliant.system.modules.batch.dto.OtherExcelDto;
-import me.brilliant.system.modules.batch.entity.AlumnusArchive;
-import me.brilliant.system.modules.batch.match.OtherMatchable;
-import me.brilliant.system.modules.batch.repository.AlumnusArchiveRepository;
-import org.apache.commons.lang3.StringUtils;
+import me.brilliant.system.modules.excelimport.constant.ImportType;
+import me.brilliant.system.modules.excelimport.dto.ImportMatchResult;
+import me.brilliant.system.modules.excelimport.dto.OtherExcelDto;
+import me.brilliant.system.modules.excelimport.match.OtherMatchable;
+import me.brilliant.system.modules.excelimport.repository.AlumnusArchiveRepository;
 import org.apache.poi.ss.usermodel.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -27,6 +26,7 @@ import static org.apache.poi.ss.usermodel.CellType.STRING;
  * @description /
  * @create 2024/7/17
  */
+@Component
 public class OtherImportProvider extends AbstractImportProvider<OtherExcelDto> {
 
     @Autowired

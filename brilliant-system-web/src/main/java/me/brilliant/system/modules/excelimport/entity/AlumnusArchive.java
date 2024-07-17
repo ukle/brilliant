@@ -1,4 +1,4 @@
-package me.brilliant.system.modules.batch.entity;
+package me.brilliant.system.modules.excelimport.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

@@ -13,4 +13,5 @@ public class ErrorCode {
     public static final Result IMPORT_MAX_COUNT_ERROR = new Result("20020100", "最大条数限制10000条");
     public static final Result IMPORT_ZERO_COUNT_ERROR = new Result("20020101", "导入数据不能为空");
     public static final Result EXCEL_ERROR = new Result("20020045", "和模板不同，请下载模板使用");
+    public static final Result IMPORT_TYPE_ERROR = new Result("20020101", "导入类型不正确");
 }

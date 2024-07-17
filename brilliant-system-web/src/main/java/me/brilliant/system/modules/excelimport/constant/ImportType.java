@@ -1,4 +1,4 @@
-package me.brilliant.system.modules.batch.constant;
+package me.brilliant.system.modules.excelimport.constant;
 
 /**
  * @author Star Chou

@@ -1,12 +1,12 @@
-package me.brilliant.system.modules.batch;
+package me.brilliant.system.modules.excelimport;
 
 import me.brilliant.boot.web.exception.ResultException;
 import me.brilliant.system.constant.ErrorCode;
-import me.brilliant.system.modules.batch.constant.ImportType;
-import me.brilliant.system.modules.batch.dto.BaseExcelDto;
-import me.brilliant.system.modules.batch.dto.ImportMatchResult;
-import me.brilliant.system.modules.batch.dto.ValidResultDto;
-import me.brilliant.system.modules.batch.entity.AlumnusArchive;
+import me.brilliant.system.modules.excelimport.constant.ImportType;
+import me.brilliant.system.modules.excelimport.dto.BaseExcelDto;
+import me.brilliant.system.modules.excelimport.dto.ImportMatchResult;
+import me.brilliant.system.modules.excelimport.dto.ValidResultDto;
+import me.brilliant.system.modules.excelimport.entity.AlumnusArchive;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.multipart.MultipartFile;
 

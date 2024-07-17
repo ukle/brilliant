@@ -1,7 +1,7 @@
-package me.brilliant.system.modules.batch.dto;
+package me.brilliant.system.modules.excelimport.dto;
 
 import lombok.Data;
-import me.brilliant.system.modules.batch.entity.AlumnusArchive;
+import me.brilliant.system.modules.excelimport.entity.AlumnusArchive;
 
 /**
  * @author Star Chou

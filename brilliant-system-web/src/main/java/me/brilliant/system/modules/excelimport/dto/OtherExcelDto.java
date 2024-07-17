@@ -1,8 +1,8 @@
-package me.brilliant.system.modules.batch.dto;
+package me.brilliant.system.modules.excelimport.dto;
 
 import com.alibaba.excel.annotation.ExcelProperty;
 import io.swagger.v3.oas.annotations.media.Schema;
-import me.brilliant.system.modules.batch.entity.AlumnusArchive;
+import me.brilliant.system.modules.excelimport.entity.AlumnusArchive;
 
 /**
  * @author Star Chou

@@ -5,5 +5,10 @@ package me.brilliant.system.modules.batch;
  * @description /
  * @create 2024/7/17
  */
-public class ExcelImportService {
+public enum DegradeTaskStatus {
+
+    Init,
+    Fail,
+    Success,
+    NeedNot,
 }
