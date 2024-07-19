@@ -82,13 +82,13 @@ public class SysUserServiceImpl extends BaseServiceImpl<SysUserRepository, SysUs
     }
 
     @Override
-    public SysUser findByMobile(String username) {
-        return this.repository.findFirstByPhone(username);
+    public SysUser findByMobile(String mobile) {
+        return this.repository.findFirstByPhone(mobile);
     }
 
     @Override
     public UserAuthInfo getUserAuthInfo(String username) {
-        SysUser sysUser = this.repository.findFirstByPhone(username);
+        SysUser sysUser = this.repository.findByUsername(username);
 
         return sysUser.convertToUserAuthInfo();
     }

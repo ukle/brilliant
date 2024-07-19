@@ -13,4 +13,5 @@ import org.springframework.stereotype.Repository;
 public interface SysUserRepository extends BaseRepository<SysUser, Long> {
 
     SysUser findFirstByPhone(String username);
+    SysUser findByUsername(String username);
 }

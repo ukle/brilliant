@@ -11,20 +11,20 @@ import lombok.extern.slf4j.Slf4j;
 import me.brilliant.boot.web.annotation.AnonymousDeleteMapping;
 import me.brilliant.boot.web.annotation.AnonymousGetMapping;
 import me.brilliant.boot.web.annotation.AnonymousPostMapping;
+import me.brilliant.boot.web.log.NeedLog;
+import me.brilliant.boot.web.mvc.BaseController;
+import me.brilliant.boot.web.plugin.norepeat.annotation.PreventRepeatSubmit;
 import me.brilliant.boot.web.security.OnlineUserService;
 import me.brilliant.boot.web.security.bean.LoginCodeEnum;
 import me.brilliant.boot.web.security.bean.LoginProperties;
 import me.brilliant.boot.web.security.bean.SecurityProperties;
 import me.brilliant.boot.web.security.core.TokenProvider;
 import me.brilliant.boot.web.security.dto.JwtUserDto;
+import me.brilliant.boot.web.utils.RedisUtils;
 import me.brilliant.system.modules.security.SecurityUtils;
 import me.brilliant.system.modules.security.model.AuthUserRequestDto;
 import me.brilliant.system.modules.security.model.AuthUserResponseDto;
 import me.brilliant.system.modules.security.model.CodeResponseDto;
-import me.brilliant.boot.web.mvc.BaseController;
-import me.brilliant.boot.web.plugin.norepeat.annotation.PreventRepeatSubmit;
-import me.brilliant.boot.web.utils.RedisUtils;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.core.Authentication;
@@ -93,6 +93,7 @@ public class AuthController extends BaseController {
         return responseDto;
     }
 
+    @NeedLog
     @Operation(summary = "获取用户信息")
     @GetMapping(value = "/info")
     public UserDetails getUserInfo() {
