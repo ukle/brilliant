@@ -13,7 +13,7 @@ import me.brilliant.boot.web.annotation.AnonymousGetMapping;
 import me.brilliant.boot.web.annotation.AnonymousPostMapping;
 import me.brilliant.boot.web.log.NeedLog;
 import me.brilliant.boot.web.mvc.BaseController;
-import me.brilliant.boot.web.plugin.norepeat.annotation.PreventRepeatSubmit;
+import me.brilliant.boot.web.plugin.norepeat.PreventRepeatSubmit;
 import me.brilliant.boot.web.security.OnlineUserService;
 import me.brilliant.boot.web.security.bean.LoginCodeEnum;
 import me.brilliant.boot.web.security.bean.LoginProperties;
