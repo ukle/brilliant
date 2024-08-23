@@ -3,7 +3,7 @@ package me.brilliant.system.modules.security.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import me.brilliant.boot.web.security.dto.JwtUserDto;
+import me.brilliant.system.modules.security.security.dto.JwtUserDto;
 
 /**
  * @author Star Chou
@@ -15,6 +15,6 @@ import me.brilliant.boot.web.security.dto.JwtUserDto;
 @NoArgsConstructor
 public class AuthUserResponseDto {
 
-    private String token;
+    private String accessToken;
     private JwtUserDto jwtUserDto;
 }

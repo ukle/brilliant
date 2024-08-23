@@ -2,11 +2,14 @@ package me.brilliant.system.modules.security.service;
 
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import me.brilliant.boot.web.exception.BadRequestException;
-import me.brilliant.boot.web.security.UserCacheManager;
-import me.brilliant.boot.web.security.dto.JwtUserDto;
-import me.brilliant.boot.web.security.dto.UserAuthInfo;
+import me.brilliant.system.modules.security.security.dto.SysUserDetails;
+import me.brilliant.system.modules.security.security.UserCacheManager;
+import me.brilliant.system.modules.security.security.dto.JwtUserDto;
+import me.brilliant.system.modules.security.security.dto.UserAuthInfo;
 import me.brilliant.system.modules.system.service.SysUserService;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
@@ -16,6 +19,7 @@ import org.springframework.stereotype.Service;
  * @description /
  * @create 2024/7/15
  */
+@Slf4j
 @RequiredArgsConstructor
 @Service("userDetailsService")
 public class UserDetailsServiceImpl implements UserDetailsService {

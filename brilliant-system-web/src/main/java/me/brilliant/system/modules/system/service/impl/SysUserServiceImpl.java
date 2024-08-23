@@ -4,7 +4,7 @@ package me.brilliant.system.modules.system.service.impl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import me.brilliant.boot.web.base.BaseServiceImpl;
-import me.brilliant.boot.web.security.dto.UserAuthInfo;
+import me.brilliant.system.modules.security.security.dto.UserAuthInfo;
 import me.brilliant.system.modules.system.model.dto.*;
 import me.brilliant.system.modules.system.model.entity.SysUser;
 import me.brilliant.system.modules.system.repository.SysUserRepository;

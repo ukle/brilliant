@@ -2,7 +2,7 @@ package me.brilliant.system.modules.system.service;
 
 
 import me.brilliant.boot.web.base.IBaseService;
-import me.brilliant.boot.web.security.dto.UserAuthInfo;
+import me.brilliant.system.modules.security.security.dto.UserAuthInfo;
 import me.brilliant.system.modules.system.model.dto.*;
 import me.brilliant.system.modules.system.model.entity.SysUser;
 import me.brilliant.boot.web.result.PageResult;

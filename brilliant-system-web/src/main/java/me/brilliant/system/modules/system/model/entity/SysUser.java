@@ -5,7 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.Data;
 import me.brilliant.boot.web.base.BaseEntity;
-import me.brilliant.boot.web.security.dto.UserAuthInfo;
+import me.brilliant.system.modules.security.security.dto.UserAuthInfo;
 import me.brilliant.system.modules.system.model.dto.SysUserDto;
 import me.brilliant.system.modules.system.model.dto.SysUserListDto;
 import org.hibernate.annotations.SQLDelete;

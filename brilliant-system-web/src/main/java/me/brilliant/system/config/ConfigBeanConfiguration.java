@@ -1,7 +1,7 @@
 package me.brilliant.system.config;
 
-import me.brilliant.boot.web.security.bean.LoginProperties;
-import me.brilliant.boot.web.security.bean.SecurityProperties;
+import me.brilliant.system.modules.security.security.bean.LoginProperties;
+import me.brilliant.system.modules.security.security.bean.SecurityProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

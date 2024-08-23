@@ -17,8 +17,5 @@ public class AuthUserRequestDto {
     @NotBlank
     private String password;
 
-    private String code;
-
-    private String uuid = "";
 }
 
