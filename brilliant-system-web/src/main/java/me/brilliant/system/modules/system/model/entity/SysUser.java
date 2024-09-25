@@ -8,6 +8,8 @@ import me.brilliant.boot.web.base.BaseEntity;
 import me.brilliant.system.modules.security.security.dto.UserAuthInfo;
 import me.brilliant.system.modules.system.model.dto.SysUserDto;
 import me.brilliant.system.modules.system.model.dto.SysUserListDto;
+import me.brilliant.system.modules.system.model.vo.UserInfoVO;
+import me.brilliant.system.modules.system.model.vo.UserPageVO;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 
@@ -24,47 +26,46 @@ import org.hibernate.annotations.Where;
 @Where(clause = "deleted = 0")
 public class SysUser extends BaseEntity {
 
-    @Column(name = "username", nullable = false, columnDefinition = "varchar(30) COMMENT '账号'")
+    @Column(name = "username", nullable = false, columnDefinition = "varchar(30) COMMENT '用户名'")
     private String username;
 
-    @Column(name = "name", nullable = false, columnDefinition = "varchar(30) COMMENT '姓名'")
-    private String name;
+    @Column(name = "nickname", nullable = false, columnDefinition = "varchar(30) COMMENT '昵称'")
+    private String nickname;
 
-    @Column(name = "phone", nullable = false, columnDefinition = "varchar(11) COMMENT '手机号'")
-    private String phone;
-
-    @Column(name = "dept_id", nullable = false, columnDefinition = "bigint COMMENT '部门ID'")
-    private Long deptId;
+    @Column(name = "gender", nullable = false, columnDefinition = "int COMMENT '性别((1-男 2-女 0-保密)'")
+    private Integer gender;
 
     @Column(name = "password", nullable = false, columnDefinition = "varchar(100) COMMENT '登录密码'")
     private String password;
 
+    @Column(name = "dept_id", nullable = false, columnDefinition = "bigint COMMENT '部门ID'")
+    private Long deptId;
+
+    @Column(name = "avatar", nullable = false, columnDefinition = "varchar(100) COMMENT '用户头像'")
+    private String avatar;
+
+    @Column(name = "email", nullable = false, columnDefinition = "varchar(100) COMMENT '邮箱'")
+    private String email;
+
+    @Column(name = "mobile", nullable = false, columnDefinition = "varchar(11) COMMENT '手机号'")
+    private String mobile;
+
     @Column(name = "status", nullable = false, columnDefinition = "int COMMENT '状态（1启用，0禁用）'")
     private Integer status;
-
-    @Column(name = "admin", nullable = false, columnDefinition = "tinyint COMMENT '是否为admin账号（0否，1是）'")
-    private Boolean admin = false;
 
     public SysUserDto convertToSysUserDto() {
         SysUserDto sysUserDto = new SysUserDto();
         sysUserDto.setStatus(this.getStatus());
+        sysUserDto.setEmail(this.getEmail());
         sysUserDto.setUsername(this.getUsername());
-        sysUserDto.setPhone(this.getPhone());
         sysUserDto.setId(this.getId());
-        sysUserDto.setName(this.getName());
+        sysUserDto.setGender(this.getGender());
+        // sysUserDto.setRoleIds(null);
+        sysUserDto.setMobile(this.getMobile());
+        sysUserDto.setDeptId(this.getDeptId());
+        sysUserDto.setAvatar(this.getAvatar());
+        sysUserDto.setNickname(this.getNickname());
         return sysUserDto;
-    }
-
-    public SysUserListDto convertToSysUserListDto() {
-        SysUserListDto sysUserListDto = new SysUserListDto();
-        sysUserListDto.setStatus(this.getStatus());
-        // sysUserListDto.setRoleNames(null);
-        sysUserListDto.setUsername(this.getUsername());
-        sysUserListDto.setPhone(this.getPhone());
-        sysUserListDto.setCreateTime(this.getCreateTime());
-        sysUserListDto.setId(this.getId());
-        sysUserListDto.setName(this.getName());
-        return sysUserListDto;
     }
 
     public UserAuthInfo convertToUserAuthInfo() {
@@ -73,12 +74,40 @@ public class SysUser extends BaseEntity {
         // userAuthInfo.setDataScope(null);
         userAuthInfo.setUsername(this.getUsername());
         // userAuthInfo.setPerms(null);
-        userAuthInfo.setUserId(this.getId());
+        // userAuthInfo.setUserId(null);
         // userAuthInfo.setRoles(null);
+        // userAuthInfo.setAdmin(null);
         userAuthInfo.setDeptId(this.getDeptId());
-        // userAuthInfo.setNickname(null);
+        userAuthInfo.setNickname(this.getNickname());
         userAuthInfo.setPassword(this.getPassword());
-        userAuthInfo.setAdmin(this.getAdmin());
         return userAuthInfo;
+    }
+
+    public UserPageVO convertToUserPageVO() {
+        UserPageVO userPageVO = new UserPageVO();
+        userPageVO.setStatus(this.getStatus());
+        userPageVO.setEmail(this.getEmail());
+        // userPageVO.setRoleNames(null);
+        userPageVO.setUsername(this.getUsername());
+        // userPageVO.setCreateTime(this.getCreateTime());
+        userPageVO.setId(this.getId());
+        // userPageVO.setDeptName(null);
+        userPageVO.setMobile(this.getMobile());
+        // userPageVO.setGenderLabel(null);
+        userPageVO.setAvatar(this.getAvatar());
+        userPageVO.setNickname(this.getNickname());
+        return userPageVO;
+    }
+
+    public UserInfoVO toUserInfoVo(SysUser user) {
+        if (user == null) return null;
+        UserInfoVO userInfoVO = new UserInfoVO();
+        userInfoVO.setUsername(this.getUsername());
+        // userInfoVO.setPerms(null);
+        // userInfoVO.setUserId(null);
+        // userInfoVO.setRoles(null);
+        userInfoVO.setAvatar(this.getAvatar());
+        userInfoVO.setNickname(this.getNickname());
+        return userInfoVO;
     }
 }

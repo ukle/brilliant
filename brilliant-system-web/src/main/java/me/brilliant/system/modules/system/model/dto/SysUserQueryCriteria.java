@@ -22,7 +22,7 @@ public class SysUserQueryCriteria {
     private String name;
 
     @Query
-    @Schema(description = "状态（1启用，0禁用）")
-    private Boolean status;
+    @Schema(description="用户状态")
+    private Integer status;
 
 }

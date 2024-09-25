@@ -14,4 +14,5 @@ public interface SysUserRepository extends BaseRepository<SysUser, Long> {
 
     SysUser findFirstByPhone(String username);
     SysUser findByUsername(String username);
+    long countByUsernameAndIdNot(String username, Long id);
 }

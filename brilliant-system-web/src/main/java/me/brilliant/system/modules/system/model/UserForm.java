@@ -1,22 +1,21 @@
-package me.brilliant.system.modules.system.model.dto;
+package me.brilliant.system.modules.system.model;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
 import lombok.Data;
-import me.brilliant.system.modules.system.model.entity.SysUser;
 
 import java.util.List;
 
 /**
  * @author Star Chou
  * @description /
- * @create 2024/7/10
+ * @create 2024/8/23
  */
+@Schema(description = "用户表单对象")
 @Data
-public class SysUserForCreateDto {
+public class UserForm {
 
     @Schema(description="用户ID")
     private Long id;
@@ -52,23 +51,4 @@ public class SysUserForCreateDto {
     @NotEmpty(message = "用户角色不能为空")
     private List<Long> roleIds;
 
-    public SysUser convertToSysUser() {
-        SysUser sysUser = new SysUser();
-        sysUser.setStatus(this.getStatus());
-        sysUser.setEmail(this.getEmail());
-        // sysUser.setCreateTime(null);
-        // sysUser.setCreateBy(null);
-        sysUser.setGender(this.getGender());
-        sysUser.setDeptId(this.getDeptId());
-        sysUser.setMobile(this.getMobile());
-        sysUser.setAvatar(this.getAvatar());
-        // sysUser.setUpdateBy(null);
-        sysUser.setUsername(this.getUsername());
-        // sysUser.setUpdateTime(null);
-        sysUser.setId(this.getId());
-        // sysUser.setDeleted(null);
-        sysUser.setNickname(this.getNickname());
-        // sysUser.setPassword(null);
-        return sysUser;
-    }
 }

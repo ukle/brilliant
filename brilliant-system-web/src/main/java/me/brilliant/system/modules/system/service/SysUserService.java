@@ -6,6 +6,8 @@ import me.brilliant.system.modules.security.security.dto.UserAuthInfo;
 import me.brilliant.system.modules.system.model.dto.*;
 import me.brilliant.system.modules.system.model.entity.SysUser;
 import me.brilliant.boot.web.result.PageResult;
+import me.brilliant.system.modules.system.model.vo.UserInfoVO;
+import me.brilliant.system.modules.system.model.vo.UserPageVO;
 import org.springframework.data.domain.PageRequest;
 
 /**
@@ -22,7 +24,7 @@ public interface SysUserService extends IBaseService<SysUser, Long> {
      * @param pageable 分页信息
      * @return 分页数据
      */
-    public PageResult<SysUserListDto> queryByPage(SysUserQueryCriteria criteria, PageRequest pageable);
+    public PageResult<UserPageVO> queryByPage(SysUserQueryCriteria criteria, PageRequest pageable);
 
     /**
      * 根据主键获取包装数据
@@ -51,5 +53,18 @@ public interface SysUserService extends IBaseService<SysUser, Long> {
     SysUser findByMobile(String username);
 
     UserAuthInfo getUserAuthInfo(String username);
+
+    boolean deleteUsers(String idsStr);
+
+    boolean updatePassword(Long userId, String password);
+
+    boolean updateStatus(Long userId, Integer status);
+
+    /**
+     * 获取登录用户信息
+     *
+     * @return
+     */
+    UserInfoVO getCurrentUserInfo();
 }
 

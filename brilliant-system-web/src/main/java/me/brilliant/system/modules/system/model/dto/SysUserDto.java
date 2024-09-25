@@ -13,22 +13,34 @@ import java.util.List;
 @Data
 public class SysUserDto {
 
-    @Schema(description = "主键Id")
+    @Schema(description="用户ID")
     private Long id;
 
-    @Schema(description = "账号")
+    @Schema(description="用户名")
     private String username;
 
-    @Schema(description = "姓名")
-    private String name;
+    @Schema(description="昵称")
+    private String nickname;
 
-    @Schema(description = "手机号")
-    private String phone;
+    @Schema(description="手机号码")
+    private String mobile;
 
-    @Schema(description = "状态（1启用，0禁用）")
+    @Schema(description="性别")
+    private Integer gender;
+
+    @Schema(description="用户头像")
+    private String avatar;
+
+    @Schema(description="邮箱")
+    private String email;
+
+    @Schema(description="用户状态(1:正常;0:禁用)")
     private Integer status;
 
-    @Schema(description = "绑定角色")
+    @Schema(description="部门ID")
+    private Long deptId;
+
+    @Schema(description="角色ID集合")
     private List<Long> roleIds;
 
 }
